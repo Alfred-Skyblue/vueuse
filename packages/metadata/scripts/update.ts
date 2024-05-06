@@ -148,6 +148,8 @@ export async function readMetadata() {
 
 async function run() {
   const indexes = await readMetadata()
+  // eslint-disable-next-line no-console
+  console.info('index.json dir:', join(DIR_PACKAGE, 'index.json'))
   await fs.writeJSON(join(DIR_PACKAGE, 'index.json'), indexes, { spaces: 2 })
 }
 
